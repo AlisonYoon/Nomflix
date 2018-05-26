@@ -1,21 +1,21 @@
 const webpack = require("webpack");
 const path = require("path");
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin'); 
+const HtmlWebpackPlugin = require('html-webpack-plugin'); 
 
 module.exports = {
     mode: "development",
-    entry: "./src/index.js",
-    module:  {
-        rules: [
-          {
-            test: /\.js$/,
-            exclude: /(node_modules)/,
-            use: {
-              loader: "babel-loader"
-            }
+    entry: ["babel-polyfill" , "./src/index.js"],
+    module: {
+      rules: [
+        {
+          test: /\.js/,
+          exclud: /(node_modules)/,
+          use: {
+            loader: "babel-loader"
           }
-        ]
-      },
+        }
+      ]
+    },
     devServer: {
         contentBase: path.join(__dirname, "src"),
         publicPath: "/",
@@ -26,10 +26,8 @@ module.exports = {
         path: path.join(__dirname, "dist"),
         filename: "bundle.js"
     },
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: path.join(__dirname, "src/index.html"),
-            filename: "index.html"
-          })
-        ]
+    plugins: [new HtmlWebpackPlugin({
+      template: path.join(__dirname, "src/index.html"),
+      filename: "index.html"
+    })]
 };
