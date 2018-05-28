@@ -1,10 +1,64 @@
+* {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+    color: #e5e5e5;
+    }
+    a:visited {
+    text-decoration: none;
+    }
+    a:hover {
+    text-decoration: none;
+    color: #b3b3b3;
+    
+}
 :root{
     --danger-theme: {
         color: white;
-        background-color: pink;
+        background-color: #999;
     }
 }
 
 body {
     @apply --danger-theme;
+    height: 1000vh;
+}
+header {
+    display: flex;
+    flex-direction: row;
+    height: 68px;
+    width: 100%;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    background-color: transparent;
+    transition: background-color 0.3s linear;
+}
+.black  {
+    background-color: black;
+}
+header img {
+    width: 92px; 
+    height: 38px;
+}
+header ul {
+    display: flex;
+    flex-direction: row;
+    width: 474px;
+    justify-content: space-between;
+}
+
+.js-playBtn, .js-muteBtn {
+    width: 30px;
+    background: none;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+}
+
+.js-video {
+    width: 100%;
 }
