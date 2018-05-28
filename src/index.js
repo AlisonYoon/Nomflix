@@ -10,7 +10,7 @@ video.autoplay= false;
 video.loop = true;
 
 const loadMutedPreference = () => {
-    const mutedPref = localtorage.getItem("muted");
+    const mutedPref = localStorage.getItem("muted");
     if (mutedPref !== null) {
         if (mutedPref === "true") {
             video.muted = true;
@@ -47,16 +47,24 @@ const handlePlayBtnClick = () => {
     }
   };
   
-  const handleRageChange = event => {
+  const handleRangeChange = event => {
     const currentVolume = event.target.value;
     video.volume = currentVolume;
   };
   
   muteBtn.addEventListener("click", handleMuteBtnClick);
   playBtn.addEventListener("click", handlePlayBtnClick);
-  range.addEventListener("change", handleRageChange);
+  range.addEventListener("change", handleRangeChange);
   loadMutedPreference();
   
+
+
+const handleContentLoaded = () => {
+  muteBtn.addEventListener("click", handleMuteBtnClick);
+  window.addEventListener("scroll", handleScroll);
+}
+
+
 
 const handleScroll = (event) => {
     
@@ -69,12 +77,5 @@ const handleScroll = (event) => {
 };
 
 window.addEventListener("scroll", handleScroll);
-
-
-const handleContentLoaded = () => {
-  muteBtn.addEventListener("click", handleMuteBtnClick);
-  window.addEventListener("scroll", handleScroll);
-}
-
 
 document.addEventListener("DOMContentLoaded", handleContentLoaded);
