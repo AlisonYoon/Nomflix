@@ -4,7 +4,9 @@
   "description": "Cloning Netflix like a boss",
   "scripts": {
     "start": "webpack-dev-server --config webpack/webpack.common.js",
-    "build": "webpack --config webpack/webpack.common.js"
+    "build": "webpack --config webpack/webpack.common.js",
+    "deploy": "gh-pages -d dist",
+    "predeploy": "npm run build"
   },
   "main": "index.js",
   "author": "Alison",
