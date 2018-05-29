@@ -4,7 +4,8 @@ const header = document.querySelector(".js-header");
 const video = document.querySelector(".js-video"),
     muteBtn = document.querySelector(".js-muteBtn"),
     playBtn = document.querySelector(".js-playBtn"),
-    range = document.querySelector(".js-range");
+    range = document.querySelector(".js-range"),
+    customSearch = document.querySelector("#custom-search");
 
 video.autoplay= false;
 video.loop = true;
@@ -51,12 +52,20 @@ const handlePlayBtnClick = () => {
     const currentVolume = event.target.value;
     video.volume = currentVolume;
   };
+
+  const handleSearchBtnClick = (event) => {
+    console.log("clock");
+    document.querySelector(".search-query").focus();
+};
   
   muteBtn.addEventListener("click", handleMuteBtnClick);
   playBtn.addEventListener("click", handlePlayBtnClick);
   range.addEventListener("change", handleRangeChange);
   loadMutedPreference();
-  
+  customSearch.addEventListener("click", handleSearchBtnClick);
+
+
+
 
 
 const handleContentLoaded = () => {
