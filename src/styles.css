@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400');
+
+* {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+}
+a {
+    text-decoration: none;
+    color: #e5e5e5;
+    }
+    a:visited {
+    text-decoration: none;
+    }
+    a:hover {
+    text-decoration: none;
+    color: #b3b3b3;
+    
+}
+:root{
+    --danger-theme: {
+        color: white;
+        background-color: #000;
+    }
+}
+
+body {
+    @apply --danger-theme;
+    height: 1000vh;
+}
+header {
+    display: flex;
+    flex-direction: row;
+    height: 68px;
+    width: 100%;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    background-color: transparent;
+    transition: background-color 0.3s linear;
+    z-index: 1;
+    font-size: 14px;
+}
+.black  {
+    background-color: black;
+}
+header img {
+    width: 129px; 
+    height: 55px;
+}
+header ul {
+    display: flex;
+    flex-direction: row;
+    width: 474px;
+    justify-content: space-between;
+}
+
+.main-video {
+    position: relative;
+}
+
+.js-playBtn {
+    position: absolute;
+    bottom: 300px;
+    left: 100px;
+    width: 126px;
+    height: 40px;
+    background: rgba(51,51,51,.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #fff;
+    font-weight: lighter;
+    border: 0;
+    outline: none;
+}
+
+.js-playBtn img {
+    width: 16px;
+    margin-right: 10px;
+}
+
+.js-muteBtn {
+    position: absolute;
+    right: 210px;
+    bottom: 200px;
+    width: 30px;
+    background: none;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+}
+.js-muteBtn img {
+    width: 32px;
+}
+.js-video {
+    width: 100%;
+}
+.js-range {
+    position: absolute;
+    right: 60px;
+    bottom: 211px;
+}
+
+.main-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+/* Secondary navigation */
+.secondary-navigation {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: flex-end;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    right: 60px;
+}
+.secondary-navigation .nav-element:not(:last-child) {
+    margin-right: 20px;
+}
+.secondary-navigation .notifications {
+    display: block;
+    width: 20px;
+}
+.account-dropdown-button .profile-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.noti-icon {
+    fill: #fff;
+}
+.caret {
+    margin-left: 10px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5px 5px 0 5px;
+    border-color: #fff transparent transparent transparent;
+}
+.profile-icon {
+    width: 32px;
+    height: 32px;
+}
+/* Search bar */
+.icon-search svg {
+    width: 22px;
+}
+.icon-search svg path {
+    fill: #fff;
+}
+#custom-search .search-query {
+    padding: 5px;
+    width: 50px;
+    border: 2px solid transparent;
+    background-color: transparent;
+    color: transparent;
+    font-size: 1em;
+    -webkit-transition: all 0.8s;
+    transition: all 0.8s;
+    margin-bottom: 0;
+  }
+  
+  /* Hide Text when unfocused plus fallbacks */
+  #custom-search .search-query::placeholder {
+    color: transparent;
+    -webkit-transition: all 0.8s;
+    transition: all 0.8s;
+  }
+  
+  #custom-search .search-query::-webkit-input-placeholder {
+    color: transparent;
+    -webkit-transition: all 0.8s;
+    transition: all 0.8s;
+  }
+  
+  #custom-search .search-query::-moz-placeholder {
+    color: transparent;
+    -webkit-transition: all 0.8s;
+    transition: all 0.8s;
+  }
+  
+  #custom-search .search-query:-moz-placeholder {
+    color: transparent;
+    -webkit-transition: all 0.8s;
+    transition: all 0.8s;
+  }
+  
+  #custom-search .search-query:-ms-input-placeholder {
+    color: transparent;
+    -webkit-transition: all 0.8s;
+    transition: all 0.8s;
+  }
+  
+  /* Style when Search is selected */
+  #custom-search .search-query:focus {
+  /*   border-radius: 50px; */
+    border: 1px solid white;
+    background-color: rgba(0,0,0,.75);
+    width: 268px;
+    height: 32px;
+    color: white;
+  }
+  
+  /* Style for placeholder value plus fallbacks */
+  #custom-search .search-query:focus::placeholder {
+    color: #cccccc;
+  }
+  
+  #custom-search .search-query:focus::-webkit-input-placeholder {
+    color: #cccccc;
+  }
+  
+  #custom-search .search-query:focus::-moz-placeholder {
+    color: transparent;
+    -webkit-transition: all 0.8s;
+    transition: all 0.8s;
+  }
+  
+  #custom-search .search-query:focus::-moz-placeholder {
+    color: transparent;
+    -webkit-transition: all 0.8s;
+    transition: all 0.8s;
+  }
+  
+  #custom-search .search-query:focus:-ms-input-placeholder {
+    color: #cccccc;
+  }
+  
+  /* Style for Button */
+  #custom-search button {
+      border: 0;
+      background: none;
+      padding: 0;
+      width: 20px;
+      margin-top: -5px;
+      position: relative;
+      top: 2px;
+      left: -24px;
+      margin-bottom: 0;
+      border-radius: 3px;
+      outline: none;
+  }
+  
+  #custom-search button span {
+      margin-left:-13px;
+  }
+
+  /* Cover Flow */
+  .cover-flow {
+      display: grid;
+      grid-template-columns: 50px 1fr;
+      position: relative;
+      top: -200px;
+  }
+  .cover-flow h3 {
+      margin: 30px 0;
+  }
+  .boxes {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: 500px;
+      grid-gap: 5px;
+  }
+  .box {
+      width:100%;
+      background: yellow;
+      transition: transform 0.2s ease-in-out;
+  }
+  .box:nth-child(1) {
+      background: url("./box1.jpg") no-repeat;
+      background-size: contain;
+  }
+  .box:nth-child(2) {
+    background: url("./box2.jpg") no-repeat;
+    background-size: contain;
+}
+.box:nth-child(3) {
+    background: url("./box3.jpg") no-repeat;
+    background-size: contain;
+}
+.box:nth-child(4) {
+    background: url("./box4.jpg") no-repeat;
+    background-size: contain;
+}
+.box:nth-child(5) {
+    background: url("./box5.jpg") no-repeat;
+    background-size: contain;
+}
+.box:nth-child(6) {
+    background: url("./box6.jpg") no-repeat;
+    background-size: contain;
+}
+  .box img {
+      width: 100%;
+  }
+  .box:hover {
+      transform: scale(1.2);
+  }
+  .previous {
+      transform: translateX(-20px);
+  }
+  .next {
+      transform: translateX(20px);
+  }
+
